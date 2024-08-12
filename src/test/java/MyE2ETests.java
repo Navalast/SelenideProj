@@ -42,5 +42,4 @@ public class MyE2ETests extends Setup {
             Assert.assertTrue(element.isEnabled());
         }
     }
-
 }

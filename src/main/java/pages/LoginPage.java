@@ -2,16 +2,25 @@ package pages;
 
 import com.codeborne.selenide.SelenideElement;
 import lombok.Getter;
-import org.openqa.selenium.By;
+import org.openqa.selenium.support.FindBy;
 
-import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.page;
 
 @Getter
 public class LoginPage {
 
-    private SelenideElement loginField = $(By.id("user-name"));
-    private SelenideElement passwordField = $(By.id("password"));
-    private SelenideElement loginBtn = $(By.id("login-button"));
+    @FindBy(id = "user-name")
+    private SelenideElement loginField;
+
+    @FindBy(id = "password")
+    private SelenideElement passwordField;
+
+    @FindBy(id = "login-button")
+    private SelenideElement loginBtn;
+
+    public LoginPage() {
+        page(this);
+    }
 
     public void auth(String login, String password) {
 
