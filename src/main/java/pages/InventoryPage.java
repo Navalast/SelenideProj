@@ -5,20 +5,26 @@ import com.codeborne.selenide.SelenideElement;
 import lombok.Getter;
 import org.openqa.selenium.support.FindBy;
 
+import static com.codeborne.selenide.Selenide.page;
+
 @Getter
 public class InventoryPage {
 
-    @FindBy(id = "//*[@class='shopping_cart_container']")
+    @FindBy(xpath = "//*[@class='shopping_cart_container']")
     private SelenideElement cartElement;
 
-    @FindBy(id = "//*[@class='shopping_cart_container']/a/span")
+    @FindBy(xpath = "//*[@class='shopping_cart_container']/a/span")
     private SelenideElement cartCounter;
 
-    @FindBy(id = "//*[@class='btn btn_primary btn_small btn_inventory ']")
+    @FindBy(xpath = "//*[@class='btn btn_primary btn_small btn_inventory ']")
     private ElementsCollection addOfElements;
 
-    @FindBy(id = "//*[@class='btn btn_secondary btn_small btn_inventory ']")
+    @FindBy(xpath = "//*[@class='btn btn_secondary btn_small btn_inventory ']")
     private ElementsCollection removeOfElements;
+
+    public InventoryPage() {
+        page(this);
+    }
 
     public void clickElem(int index) {
         getAddOfElements().get(index).click();
