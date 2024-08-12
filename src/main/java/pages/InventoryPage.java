@@ -3,15 +3,10 @@ package pages;
 import lombok.Getter;
 import selec.Selectors;
 
-import static com.codeborne.selenide.Selenide.page;
-
 @Getter
 public class InventoryPage {
-    private final Selectors selectors = new Selectors();
 
-    public InventoryPage() {
-        page(this);
-    }
+    private final Selectors selectors = new Selectors();
 
     public void clickElem(int index) {
         selectors.getAddOfElements().get(index).click();

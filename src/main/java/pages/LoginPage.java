@@ -10,11 +10,6 @@ public class LoginPage {
 
     private Selectors selectors = new Selectors();
 
-    public LoginPage() {
-        page(this);
-    }
-
-
     private void enterLogin(String login) {
         selectors.getLoginPage().sendKeys(login);
     }
