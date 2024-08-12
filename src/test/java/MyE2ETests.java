@@ -3,9 +3,12 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.InventoryPage;
 import pages.LoginPage;
+import selec.Selectors;
 import setup.Setup;
 
 public class MyE2ETests extends Setup {
+
+    private final Selectors selectors = new Selectors();
 
     @Test
     public void loginTest() {
@@ -14,7 +17,7 @@ public class MyE2ETests extends Setup {
         loginPage.auth("standard_user", "secret_sauce");
 
         InventoryPage inventoryPage = new InventoryPage();
-        Assert.assertTrue(inventoryPage.getCartElement().isDisplayed());
+        Assert.assertTrue(inventoryPage.getSelectors().getCartElement().isDisplayed());
     }
 
     @Test(dependsOnMethods = "loginTest")
@@ -24,21 +27,21 @@ public class MyE2ETests extends Setup {
         inventoryPage.clickElem(0);
         inventoryPage.clickElem(1);
 
-        Assert.assertTrue(inventoryPage.getRemoveOfElements().get(0).isDisplayed());
-        Assert.assertTrue(inventoryPage.getRemoveOfElements().get(1).isDisplayed());
+        Assert.assertTrue(inventoryPage.getSelectors().getRemoveOfElements().get(0).isDisplayed());
+        Assert.assertTrue(inventoryPage.getSelectors().getRemoveOfElements().get(1).isDisplayed());
 
         int count = 0;
-        for (WebElement element : inventoryPage.getRemoveOfElements()) {
+        for (WebElement element : inventoryPage.getSelectors().getRemoveOfElements()) {
             count++;
         }
         String counter = String.valueOf(count);
 
-        Assert.assertTrue(inventoryPage.getCartCounter().getText().contains(counter));
+        Assert.assertTrue(inventoryPage.getSelectors().getCartCounter().getText().contains(counter));
 
         inventoryPage.removeClickElem(0);
         inventoryPage.removeClickElem(0);
 
-        for (WebElement element: inventoryPage.getAddOfElements()) {
+        for (WebElement element: inventoryPage.getSelectors().getAddOfElements()) {
             Assert.assertTrue(element.isEnabled());
         }
     }

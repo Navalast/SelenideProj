@@ -1,28 +1,30 @@
 package pages;
 
 import lombok.Getter;
-import org.openqa.selenium.By;
+import selec.Selectors;
 
-import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.page;
 
 @Getter
 public class LoginPage {
 
+    private Selectors selectors = new Selectors();
+
     public LoginPage() {
         page(this);
     }
 
+
     private void enterLogin(String login) {
-        $(By.id("user-name")).sendKeys(login);
+        selectors.getLoginPage().sendKeys(login);
     }
 
     private void enterPassword(String password) {
-        $(By.id("password")).sendKeys(password);
+        selectors.getPasswordField().sendKeys(password);
     }
 
     private void clickLoginButton() {
-        $(By.id("login-button")).click();
+        selectors.getLoginBtn().click();
     }
 
     public LoginPage auth(String login, String password) {
