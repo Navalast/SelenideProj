@@ -11,7 +11,7 @@ public class CartSelectors {
     @FindBy(xpath = "//span[@class='title']")
     private SelenideElement yourCartElement;
 
-    @FindBy(xpath = "//*[@class='cart_list']")
+    @FindBy(css = "div.cart_item")
     private ElementsCollection cartLst;
 
     @FindBy(xpath = "//button[text() = 'Remove']")
