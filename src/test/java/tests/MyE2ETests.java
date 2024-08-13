@@ -24,7 +24,7 @@ public class MyE2ETests extends TestBase {
                 .openCart()
                 .assertTextAndElemIsVisible()
                 .clickRemoveBtn(0)
-                .assertGetCartListLength()
+                .assertGetCartListLength(1)
                 .assertCheckoutBtnIsVisible()
                 .goCheckout()
                 .checkFieldOnPage()

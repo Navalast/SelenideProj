@@ -22,9 +22,8 @@ public class CartPage {
         return this;
     }
 
-    public CartPage assertGetCartListLength() {
-        int len = page(CartSelectors.class).getCartLst().size();
-        assertEquals(len, page(CartSelectors.class).getCartLst().size());
+    public CartPage assertGetCartListLength(int size) {
+        assertEquals(size, page(CartSelectors.class).getCartLst().size());
         return this;
     }
 
