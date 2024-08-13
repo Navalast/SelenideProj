@@ -1,11 +1,11 @@
 package tests;
 
 import org.testng.annotations.Test;
-import setup.Setup;
+import setup.TestBase;
 
 import static core.Start.start;
 
-public class MyE2ETests extends Setup {
+public class MyE2ETests extends TestBase {
 
     @Test
     public void e2eTest() {
@@ -36,7 +36,7 @@ public class MyE2ETests extends Setup {
     }
 
     @Test
-    public void openTest() {
+    public void openCartTest() {
         start()
                 .openCart();
     }

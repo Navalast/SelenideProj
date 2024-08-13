@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 @Getter
 public class CartSelectors {
 
-    @FindBy(xpath = "//*[@class='title']")
+    @FindBy(xpath = "//span[@class='title']")
     private SelenideElement yourCartElement;
 
     @FindBy(xpath = "//*[@class='cart_list']")
