@@ -1,25 +1,28 @@
 package tests;
 
+import core.Start;
 import org.testng.annotations.Test;
 import pages.*;
 import setup.Setup;
+
+import static core.Start.*;
 
 public class MyE2ETests extends Setup {
 
     @Test
     public void loginTest() {
-        new LoginPage()
-                .auth("standard_user", "secret_sauce")
+        start()
                 .assertCartElementIsVisible();
     }
 
-    @Test(dependsOnMethods = "loginTest")
+    @Test
     public void addAndRemoveInCartTest() {
-        new InventoryPage()
+        start()
+                .assertCartElementIsVisible()
                 .clickElem(0)
                 .clickElem(1)
                 .assertRemoveElementIsVisible()
-                .removeClickElem(0)
+                .removeClickElem(1)
                 .removeClickElem(0)
                 .assertRemoveClickElement();
     }

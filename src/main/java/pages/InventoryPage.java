@@ -6,6 +6,8 @@ import org.testng.Assert;
 import selectors.InventorySelectors;
 
 import static com.codeborne.selenide.Selenide.page;
+import static java.lang.String.*;
+import static org.testng.Assert.*;
 
 @Getter
 public class InventoryPage {
@@ -21,27 +23,21 @@ public class InventoryPage {
     }
 
     public InventoryPage assertCartElementIsVisible(){
-        Assert.assertTrue(page(InventorySelectors.class).getCartElement().isDisplayed());
+        assertTrue(page(InventorySelectors.class).getCartElement().isDisplayed());
         return this;
     }
 
     public InventoryPage assertRemoveElementIsVisible() {
-        Assert.assertTrue(page(InventorySelectors.class).getRemoveOfElements().get(0).isDisplayed());
-        Assert.assertTrue(page(InventorySelectors.class).getRemoveOfElements().get(1).isDisplayed());
-
-        int count = 0;
-        for (WebElement element : page(InventorySelectors.class).getRemoveOfElements()) {
-            count++;
-        }
-        String counter = String.valueOf(count);
-
-        Assert.assertTrue(page(InventorySelectors.class).getCartCounter().getText().contains(counter));
+        assertTrue(page(InventorySelectors.class).getRemoveOfElements().get(0).isDisplayed());
+        assertTrue(page(InventorySelectors.class).getRemoveOfElements().get(1).isDisplayed());
+        String counter = valueOf(page(InventorySelectors.class).getRemoveOfElements().size());
+        assertEquals(counter, page(InventorySelectors.class).getCartCounter().getText());
         return this;
     }
 
     public InventoryPage assertRemoveClickElement() {
         for (WebElement element: page(InventorySelectors.class).getAddOfElements()) {
-            Assert.assertTrue(element.isEnabled());
+            assertTrue(element.isEnabled());
         }
         return this;
     }
