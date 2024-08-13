@@ -1,7 +1,7 @@
 package pages;
 
+import com.codeborne.selenide.SelenideElement;
 import lombok.Getter;
-import org.openqa.selenium.WebElement;
 import selectors.InventorySelectors;
 
 import static com.codeborne.selenide.Selenide.page;
@@ -37,7 +37,7 @@ public class InventoryPage {
     }
 
     public InventoryPage assertRemoveClickElement() {
-        for (WebElement element: page(InventorySelectors.class).getAddToCart()) {
+        for (SelenideElement element: page(InventorySelectors.class).getAddToCart()) {
             assertTrue(element.isEnabled());
         }
         return this;
