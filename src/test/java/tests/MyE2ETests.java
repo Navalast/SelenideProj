@@ -11,14 +11,14 @@ public class MyE2ETests extends Setup {
     public void e2eTest() {
         start()
                 .assertCartElementIsVisible()
-                .clickElem(0)
-                .clickElem(1)
+                .addElemToCart(0)
+                .addElemToCart(1)
                 .assertRemoveElementIsVisible()
-                .removeClickElem(1)
-                .removeClickElem(0)
+                .removeElemFromCart(1)
+                .removeElemFromCart(0)
                 .assertRemoveClickElement()
-                .clickElem(0)
-                .clickElem(1)
+                .addElemToCart(0)
+                .addElemToCart(1)
                 .assertRemoveElementIsVisible()
                 .assertRemoveClickElement()
                 .openCart()
@@ -26,14 +26,13 @@ public class MyE2ETests extends Setup {
                 .clickRemoveBtn(0)
                 .assertGetCartListLength()
                 .assertCheckoutBtnIsVisible()
-                .nextStep()
+                .goCheckout()
                 .checkFieldOnPage()
-                .insertInfo("Tony", "SkinnyMan", "2281337")
-                .nextStep()
+                .insertInfoAboutPerson("Tony", "SkinnyMan", "2281337")
+                .nextStepTwo()
                 .assertVisibleText()
-                .nextStep()
+                .nextStepThree()
                 .assertElementIsDisplayed();
-
     }
 
     @Test

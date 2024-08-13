@@ -8,15 +8,15 @@ import org.openqa.selenium.support.FindBy;
 @Getter
 public class InventorySelectors {
 
-    @FindBy(xpath = "//*[@class='shopping_cart_container']")
+    @FindBy(id = "shopping_cart_container")
     private SelenideElement cartElement;
 
-    @FindBy(xpath = "//*[@class='shopping_cart_container']/a/span")
+    @FindBy(xpath = "//div[@id='shopping_cart_container']//span")
     private SelenideElement cartCounter;
 
-    @FindBy(xpath = "//*[@class='btn btn_primary btn_small btn_inventory ']")
+    @FindBy(xpath = "//button[text() = 'Add to cart']")
     private ElementsCollection addToCart;
 
-    @FindBy(xpath = "//*[@class='btn btn_secondary btn_small btn_inventory ']")
+    @FindBy(xpath = "//button[text() = 'Remove']")
     private ElementsCollection remove;
 }

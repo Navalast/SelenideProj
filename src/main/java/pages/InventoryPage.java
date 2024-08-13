@@ -10,12 +10,12 @@ import static org.testng.Assert.assertTrue;
 
 public class InventoryPage {
 
-    public InventoryPage clickElem(int index) {
+    public InventoryPage addElemToCart(int index) {
         page(InventorySelectors.class).getAddToCart().get(index).click();
         return this;
     }
 
-    public InventoryPage removeClickElem(int index) {
+    public InventoryPage removeElemFromCart(int index) {
         page(InventorySelectors.class).getRemove().get(index).click();
         return this;
     }

@@ -7,10 +7,10 @@ import org.openqa.selenium.support.FindBy;
 @Getter
 public class CheckoutStepOneSelectors {
 
-    @FindBy(xpath = "//*[@class='btn btn_secondary back btn_medium cart_cancel_link']")
+    @FindBy(id = "cancel")
     private SelenideElement cancelButton;
 
-    @FindBy(xpath = "//*[@class='submit-button btn btn_primary cart_button btn_action']")
+    @FindBy(id = "continue")
     private SelenideElement submitButton;
 
     @FindBy(id = "first-name")

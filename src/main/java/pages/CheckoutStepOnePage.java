@@ -16,14 +16,14 @@ public class CheckoutStepOnePage {
         return this;
     }
 
-    public CheckoutStepOnePage insertInfo(String firstname, String lastname, String code) {
+    public CheckoutStepOnePage insertInfoAboutPerson(String firstname, String lastname, String code) {
         page(CheckoutStepOneSelectors.class).getFirstName().sendKeys(firstname);
         page(CheckoutStepOneSelectors.class).getLastName().sendKeys(lastname);
         page(CheckoutStepOneSelectors.class).getPostalCode().sendKeys(code);
         return this;
     }
 
-    public CheckoutStepTwoPage nextStep() {
+    public CheckoutStepTwoPage nextStepTwo() {
         page(CheckoutStepOneSelectors.class).getSubmitButton().click();
         return new CheckoutStepTwoPage();
     }

@@ -26,7 +26,7 @@ public class CheckoutStepTwoPage {
         return this;
     }
 
-    public CheckoutCompletePage nextStep() {
+    public CheckoutCompletePage nextStepThree() {
         page(CheckoutStepTwoSelectors.class).getFinishButton().click();
         return new CheckoutCompletePage();
     }
