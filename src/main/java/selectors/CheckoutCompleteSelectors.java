@@ -7,9 +7,9 @@ import org.openqa.selenium.support.FindBy;
 @Getter
 public class CheckoutCompleteSelectors {
 
-    @FindBy(xpath = "//*[@class='btn btn_primary btn_small']")
+    @FindBy(id = "back-to-products")
     private SelenideElement backHomeButton;
 
-    @FindBy(xpath = "//*[@class='pony_express']")
+    @FindBy(css = ".pony_express")
     private SelenideElement completeImage;
 }

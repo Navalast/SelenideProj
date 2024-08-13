@@ -1,18 +1,18 @@
 package pages;
 
-import org.testng.Assert;
 import selectors.CheckoutStepOneSelectors;
 
 import static com.codeborne.selenide.Selenide.page;
+import static org.testng.Assert.assertTrue;
 
 public class CheckoutStepOnePage {
 
     public CheckoutStepOnePage checkFieldOnPage() {
-        Assert.assertTrue(page(CheckoutStepOneSelectors.class).getCancelButton().isDisplayed());
-        Assert.assertTrue(page(CheckoutStepOneSelectors.class).getSubmitButton().isDisplayed());
-        Assert.assertTrue(page(CheckoutStepOneSelectors.class).getFirstName().isDisplayed());
-        Assert.assertTrue(page(CheckoutStepOneSelectors.class).getLastName().isDisplayed());
-        Assert.assertTrue(page(CheckoutStepOneSelectors.class).getPostalCode().isDisplayed());
+        assertTrue(page(CheckoutStepOneSelectors.class).getCancelButton().isDisplayed());
+        assertTrue(page(CheckoutStepOneSelectors.class).getSubmitButton().isDisplayed());
+        assertTrue(page(CheckoutStepOneSelectors.class).getFirstName().isDisplayed());
+        assertTrue(page(CheckoutStepOneSelectors.class).getLastName().isDisplayed());
+        assertTrue(page(CheckoutStepOneSelectors.class).getPostalCode().isDisplayed());
         return this;
     }
 

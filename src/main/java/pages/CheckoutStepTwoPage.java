@@ -1,14 +1,15 @@
 package pages;
 
-import org.testng.Assert;
 import selectors.CheckoutStepTwoSelectors;
 
 import static com.codeborne.selenide.Selenide.page;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 public class CheckoutStepTwoPage {
 
     public CheckoutStepTwoPage assertVisibleText() {
-        Assert.assertTrue(page(CheckoutStepTwoSelectors.class).getFinishButton().isDisplayed());
+        assertTrue(page(CheckoutStepTwoSelectors.class).getFinishButton().isDisplayed());
 
         String regex = "[A-z: $]";
         String itemTotal = page(CheckoutStepTwoSelectors.class).getItemTotal().getText().replaceAll(regex, "");
@@ -21,7 +22,7 @@ public class CheckoutStepTwoPage {
         double sumTotal = Double.parseDouble(sum);
 
         double assertSum = doubleItemTotal + doubleTaxTotal;
-        Assert.assertEquals(sumTotal, assertSum);
+        assertEquals(sumTotal, assertSum);
 
         return this;
     }
