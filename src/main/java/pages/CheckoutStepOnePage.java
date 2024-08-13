@@ -1,12 +1,10 @@
 package pages;
 
-import lombok.Getter;
 import org.testng.Assert;
 import selectors.CheckoutStepOneSelectors;
 
 import static com.codeborne.selenide.Selenide.page;
 
-@Getter
 public class CheckoutStepOnePage {
 
     public CheckoutStepOnePage checkFieldOnPage() {

@@ -1,14 +1,11 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
-import lombok.Getter;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import selectors.CartSelectors;
 
 import static com.codeborne.selenide.Selenide.page;
 
-@Getter
 public class CartPage {
 
     public CartPage clickRemoveBtn(int index) {

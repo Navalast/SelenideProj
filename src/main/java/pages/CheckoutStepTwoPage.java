@@ -1,12 +1,10 @@
 package pages;
 
-import lombok.Getter;
 import org.testng.Assert;
 import selectors.CheckoutStepTwoSelectors;
 
 import static com.codeborne.selenide.Selenide.page;
 
-@Getter
 public class CheckoutStepTwoPage {
 
     public CheckoutStepTwoPage assertVisibleText() {

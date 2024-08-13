@@ -14,7 +14,7 @@ public class MyE2ETests extends Setup {
                 .clickElem(0)
                 .clickElem(1)
                 .assertRemoveElementIsVisible()
-                .removeClickElem(0)
+                .removeClickElem(1)
                 .removeClickElem(0)
                 .assertRemoveClickElement()
                 .clickElem(0)

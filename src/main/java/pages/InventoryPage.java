@@ -1,7 +1,6 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
-import lombok.Getter;
 import selectors.InventorySelectors;
 
 import static com.codeborne.selenide.Selenide.page;
@@ -9,7 +8,6 @@ import static java.lang.String.valueOf;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-@Getter
 public class InventoryPage {
 
     public InventoryPage clickElem(int index) {

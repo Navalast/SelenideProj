@@ -1,11 +1,9 @@
 package pages;
 
-import lombok.Getter;
 import selectors.LoginSelectors;
 
 import static com.codeborne.selenide.Selenide.page;
 
-@Getter
 public class LoginPage {
 
     public InventoryPage auth(String login, String password) {
