@@ -14,12 +14,6 @@ public class MyE2ETests extends TestBase {
                 .addElemToCart(0)
                 .addElemToCart(1)
                 .assertRemoveElementIsVisible()
-                .removeElemFromCart(1)
-                .removeElemFromCart(0)
-                .assertRemoveClickElement()
-                .addElemToCart(0)
-                .addElemToCart(1)
-                .assertRemoveElementIsVisible()
                 .assertRemoveClickElement()
                 .openCart()
                 .assertTextAndElemIsVisible()
@@ -36,8 +30,14 @@ public class MyE2ETests extends TestBase {
     }
 
     @Test
-    public void openCartTest() {
+    public void addAndRemoveElementTest() {
         start()
-                .openCart();
+                .assertCartElementIsVisible()
+                .addElemToCart(0)
+                .addElemToCart(1)
+                .assertRemoveElementIsVisible()
+                .removeElemFromCart(1)
+                .removeElemFromCart(0)
+                .assertRemoveClickElement();
     }
 }
