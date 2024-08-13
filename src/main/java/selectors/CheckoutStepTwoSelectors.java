@@ -1,5 +1,6 @@
 package selectors;
 
+import com.codeborne.selenide.SelenideElement;
 import lombok.Getter;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,14 +9,14 @@ import org.openqa.selenium.support.FindBy;
 public class CheckoutStepTwoSelectors {
 
     @FindBy(xpath = "//*[@class='btn btn_action btn_medium cart_button']")
-    private WebElement finishButton;
+    private SelenideElement finishButton;
 
     @FindBy(xpath = "//*[@class='summary_subtotal_label']")
-    private WebElement itemTotal;
+    private SelenideElement itemTotal;
 
     @FindBy(xpath = "//*[@class='summary_tax_label']")
-    private WebElement taxTotal;
+    private SelenideElement taxTotal;
 
     @FindBy(xpath = "//*[@class='summary_total_label']")
-    private WebElement totalSum;
+    private SelenideElement totalSum;
 }

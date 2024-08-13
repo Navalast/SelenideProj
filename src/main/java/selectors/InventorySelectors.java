@@ -15,8 +15,8 @@ public class InventorySelectors {
     private SelenideElement cartCounter;
 
     @FindBy(xpath = "//*[@class='btn btn_primary btn_small btn_inventory ']")
-    private ElementsCollection addOfElements;
+    private ElementsCollection addToCart;
 
     @FindBy(xpath = "//*[@class='btn btn_secondary btn_small btn_inventory ']")
-    private ElementsCollection removeOfElements;
+    private ElementsCollection remove;
 }

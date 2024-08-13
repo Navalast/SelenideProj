@@ -1,5 +1,6 @@
 package selectors;
 
+import com.codeborne.selenide.SelenideElement;
 import lombok.Getter;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,14 +11,14 @@ import java.util.List;
 public class CartSelectors {
 
     @FindBy(xpath = "//*[@class='title']")
-    private WebElement yourCartElement;
+    private SelenideElement yourCartElement;
 
     @FindBy(xpath = "//*[@class='cart_list']")
-    private List<WebElement> cartLst;
+    private List<SelenideElement> cartLst;
 
     @FindBy(xpath = "//*[@class='btn btn_secondary btn_small cart_button']")
-    private List<WebElement> removeButton;
+    private List<SelenideElement> removeButton;
 
     @FindBy(xpath = "//*[@class='btn btn_action btn_medium checkout_button ']")
-    private WebElement checkoutButton;
+    private SelenideElement checkoutButton;
 }

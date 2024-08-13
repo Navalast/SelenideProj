@@ -1,5 +1,6 @@
 package pages;
 
+import com.codeborne.selenide.SelenideElement;
 import lombok.Getter;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -17,7 +18,7 @@ public class CartPage {
 
     public CartPage assertTextAndElemIsVisible() {
         Assert.assertTrue(page(CartSelectors.class).getYourCartElement().getText().contains("Your Cart"));
-        for (WebElement elem : page(CartSelectors.class).getCartLst()) {
+        for (SelenideElement elem : page(CartSelectors.class).getCartLst()) {
             Assert.assertTrue(elem.isDisplayed());
         }
         return this;

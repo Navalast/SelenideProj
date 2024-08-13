@@ -1,5 +1,6 @@
 package selectors;
 
+import com.codeborne.selenide.SelenideElement;
 import lombok.Getter;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,8 +9,8 @@ import org.openqa.selenium.support.FindBy;
 public class CheckoutCompleteSelectors {
 
     @FindBy(xpath = "//*[@class='btn btn_primary btn_small']")
-    private WebElement backHomeButton;
+    private SelenideElement backHomeButton;
 
     @FindBy(xpath = "//*[@class='pony_express']")
-    private WebElement completeImage;
+    private SelenideElement completeImage;
 }
