@@ -1,13 +1,15 @@
 package tests;
 
+import io.qameta.allure.Description;
 import org.testng.annotations.Test;
 import setup.TestBase;
 
 import static core.Start.start;
 
-public class MyE2ETests extends TestBase {
+public class MyE2ETests extends TestBase  {
 
     @Test
+    @Description("E2E Тест с добавлением товара в корзину и оформлением покупки")
     public void e2eTest() {
         start()
                 .assertCartElementIsVisible()
@@ -30,6 +32,7 @@ public class MyE2ETests extends TestBase {
     }
 
     @Test
+    @Description("Тест добавление и удаления товара из корзины")
     public void addAndRemoveElementTest() {
         start()
                 .assertCartElementIsVisible()

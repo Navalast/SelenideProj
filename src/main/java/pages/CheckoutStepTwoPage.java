@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import selectors.CheckoutStepTwoSelectors;
 
 import static com.codeborne.selenide.Selenide.page;
@@ -8,6 +9,7 @@ import static org.testng.Assert.assertTrue;
 
 public class CheckoutStepTwoPage {
 
+    @Step("Проверка на корректное отображение суммы и налога")
     public CheckoutStepTwoPage assertVisibleText() {
         assertTrue(page(CheckoutStepTwoSelectors.class).getFinishButton().isDisplayed());
 
@@ -27,6 +29,7 @@ public class CheckoutStepTwoPage {
         return this;
     }
 
+    @Step("Перейти на третий этап оформления заказа")
     public CheckoutCompletePage nextStepThree() {
         page(CheckoutStepTwoSelectors.class).getFinishButton().click();
         return new CheckoutCompletePage();
