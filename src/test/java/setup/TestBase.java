@@ -18,7 +18,7 @@ public abstract class TestBase implements TestLifecycleListener {
         WebDriverManager.chromedriver().setup();
         Configuration.browser = "chrome";
         Configuration.browserSize = "1920x1080";
-        Configuration.headless = false;
+        Configuration.headless = true;
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
     }
 
