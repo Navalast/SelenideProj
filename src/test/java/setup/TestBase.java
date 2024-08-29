@@ -20,8 +20,7 @@ public abstract class TestBase implements TestLifecycleListener {
     @BeforeTest
     public void setup() {
         WebDriverManager.chromedriver().setup();
-//        Configuration.browser = "chrome";
-//        System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver");
+        Configuration.browser = "chrome";
 //        Configuration.browserSize = "1920x1080";
         Configuration.headless = true;
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
@@ -32,7 +31,7 @@ public abstract class TestBase implements TestLifecycleListener {
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--remote-allow-origins=*");
-//        options.addArguments("--disable-gpu");
+        options.addArguments("--headless");
 
         Configuration.browserCapabilities = options;
     }
