@@ -23,8 +23,10 @@ public abstract class TestBase implements TestLifecycleListener {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--no-sandbox");
-        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--no-sandbox");  // Запускает браузер в защищенном режиме
+        options.addArguments("--disable-dev-shm-usage");  // Использует /tmp вместо /dev/shm
+        options.addArguments("--remote-allow-origins=*");
+
         Configuration.browserCapabilities = options;
     }
 
