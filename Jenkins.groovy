@@ -5,7 +5,7 @@ pipeline {
         stage('Build and Test') {
             steps {
                 script {
-                    docker.image('your-docker-image').inside {
+                    docker.image('my-jenkins').inside {
                         sh 'mvn clean install'
                     }
                 }
