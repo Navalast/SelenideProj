@@ -1,8 +1,7 @@
 package setup;
 
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
-import com.codeborne.selenide.SelenideDriver;
+import com.codeborne.selenide.WebDriverRunner;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Step;
@@ -11,8 +10,6 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-
-import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 public abstract class TestBase implements TestLifecycleListener {
 
@@ -39,6 +36,6 @@ public abstract class TestBase implements TestLifecycleListener {
     @Step("Закрыть браузер")
     @AfterTest
     public void tearDown() {
-        closeWebDriver();
+        WebDriverRunner.closeWebDriver();
     }
 }
