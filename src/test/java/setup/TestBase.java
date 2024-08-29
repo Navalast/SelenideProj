@@ -7,6 +7,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Step;
 import io.qameta.allure.listener.TestLifecycleListener;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -16,7 +17,6 @@ public abstract class TestBase implements TestLifecycleListener {
     @Step("Настройка окружения")
     @BeforeTest
     public void setup() {
-        Configuration.browser = "chrome";
         System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver");
         Configuration.browserSize = "1920x1080";
         Configuration.headless = true;
