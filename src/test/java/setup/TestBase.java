@@ -7,6 +7,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Step;
 import io.qameta.allure.listener.TestLifecycleListener;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
@@ -20,6 +21,11 @@ public abstract class TestBase implements TestLifecycleListener {
         Configuration.browserSize = "1920x1080";
         Configuration.headless = true;
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        Configuration.browserCapabilities = options;
     }
 
     @Step("Закрыть браузер")
