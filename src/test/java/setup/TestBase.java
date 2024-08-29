@@ -16,8 +16,8 @@ public abstract class TestBase implements TestLifecycleListener {
     @Step("Настройка окружения")
     @BeforeTest
     public void setup() {
-        WebDriverManager.chromedriver().setup();
         Configuration.browser = "chrome";
+        System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver");
         Configuration.browserSize = "1920x1080";
         Configuration.headless = true;
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
