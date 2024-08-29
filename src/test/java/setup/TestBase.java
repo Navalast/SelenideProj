@@ -12,25 +12,27 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
+import static com.codeborne.selenide.Selenide.closeWebDriver;
+
 public abstract class TestBase implements TestLifecycleListener {
 
     @Step("Настройка окружения")
     @BeforeTest
     public void setup() {
         WebDriverManager.chromedriver().setup();
-        Configuration.browser = "chrome";
+//        Configuration.browser = "chrome";
 //        System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver");
-        Configuration.browserSize = "1920x1080";
+//        Configuration.browserSize = "1920x1080";
         Configuration.headless = true;
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
         Configuration.baseUrl = "https://www.saucedemo.com/";
 
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--no-sandbox");  // Запускает браузер в защищенном режиме
-        options.addArguments("--disable-dev-shm-usage");  // Использует /tmp вместо /dev/shm
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--remote-allow-origins=*");
-        options.addArguments("--disable-gpu");
+//        options.addArguments("--disable-gpu");
 
         Configuration.browserCapabilities = options;
     }
@@ -38,6 +40,6 @@ public abstract class TestBase implements TestLifecycleListener {
     @Step("Закрыть браузер")
     @AfterTest
     public void tearDown() {
-        Selenide.closeWebDriver();
+        closeWebDriver();
     }
 }
